@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<record id="product_product_form_inherit" model="ir.ui.view">
+			<field name="name">product.product.inherit</field>
+			<field name="model">product.product</field>
+			<field name="inherit_id" ref="product.product_normal_form_view" />
+			<field name="arch" type="xml">
+				<data>
+					<xpath expr="//field[@name='lst_price']" position="before">
+						<field name="product_type_id" string='Product Type' />
+						<label for="times" />
+						<div class="o_row">
+							<field name="times" string='Times' />
+							<field name="times_type" />
+						</div>
+					</xpath>
+				</data>
+			</field>
+		</record>
+	</data>
+</odoo>

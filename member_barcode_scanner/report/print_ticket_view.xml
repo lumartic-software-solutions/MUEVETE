@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="print_ticket_report_view">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <div class="row">
+                            <div class="col-xs-12 text-center">
+                                <h5>
+                                    <strong>Consumicion Gratis en Cayo Largo</strong>
+                                </h5>
+                                <h6>Vale solo pera el dia de la fecha</h6>
+                                <h6>
+                                    Fetcha:
+                                    <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y')"/>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h6>
+                                Nombre del Socio:
+                                <span t-field="o.partner_id"/>
+                            </h6>
+                            <h6>
+                                Evento Registardo:
+                                <span t-field="o.event_id"/>
+                            </h6>
+                            <h6>
+                                Responsable:
+                                <span t-esc="request.env.user.name"/>
+                            </h6>
+                        </div>
+                    </div>
+                    
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

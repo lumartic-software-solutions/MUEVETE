@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_backend" name="member_attendance assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+<!--        	<script type="text/javascript" src="/member_barcode_scanner/static/src/js/common.js"></script-->
+            <script type="text/javascript" src="/member_barcode_scanner/static/src/js/kiosk_mode.js"></script>
+        </xpath>
+    </template>
+</odoo>

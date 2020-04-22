@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+     	
+     	<record id="paperformat_gym" model="report.paperformat">
+            <field name="name">Card Member</field>
+            <field name="default" eval="True" />
+            <field name="format">Letter</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">25</field>
+            <field name="margin_bottom">5</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">0</field>
+            <field name="dpi">90</field>
+        </record>
+        
+        <report
+        id="card_member_report"
+        model="res.partner"
+        string="Card Member"
+        report_type="qweb-pdf"
+        name="tomas_gym_extend.card_member_view"
+        file="tomas_gym_extend.card_member_view"
+        menu="True"
+        paperformat="tomas_gym_extend.paperformat_gym"
+        />
+        
+    </data>
+</openerp>

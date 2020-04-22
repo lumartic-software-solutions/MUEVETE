@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template xml:space="preserve">
+    <t t-name="PresenceIndicator">
+        <div class="oe_hr_attendance_status fa fa-user">
+        </div>
+    </t>
+
+    <t t-name="MemberAttendanceKioskMode">
+        <div class="o_hr_attendance_kiosk_mode_container">
+            <div class="o_hr_attendance_kiosk_mode">
+                <h1>Welcome to <t t-esc="widget.company_name"/></h1>
+                <img t-attf-src="{{widget.company_image_url}}" alt="Company Logo"/>
+                <h2>Scan your badge</h2>
+                <h4>or</h4>
+                <h2>Enter Barcode..</h2>
+                <input class="mt32" type="text" id="member_barcode" placeholder="Waiting for barcode scan..." size="40"/>
+            </div>
+            <div class="o_hr_attendance_clock"></div>
+        </div>
+    </t>
+
+    <t t-name="member_barcode_success">
+        <div class="o_notification o_event_success" t-translation="off">
+            <a t-if="widget.sticky" class="fa fa-times o_close" href="#"/>
+            <div class="o_notification_title">
+                <span class="o_icon fa fa-3x fa-thumbs-up"/>
+                <t t-raw="widget.title"/>
+            </div>
+        </div>
+    </t>
+    
+    
+    <t t-name="Memberticketreceipt">
+        <receipt align='center' width='40' value-thousands-separator='' >
+                <t>
+                    <img src='/member_barcode_scanner/static/src/xml/barcode.png' />
+                    <br/>
+                </t>
+               <!--<div font='b'>
+                    <div><strong>Consumicion Gratis en Cayo Largo</strong></div>
+                    <div><h6>Vale solo pera el dia de la fecha</h6></div>
+                    <div>Fetcha: <span t-esc="event.current_date"/></div>
+                    <div>Nombre del Socio: <span t-esc="event.attendee"/></div>
+                    <div>Evento Registardo: <span t-esc="event.event"/></div>
+                    <div>Responsable: <span t-esc="event.user"/></div>
+                </div>-->
+                <div font='b'>
+                    <div><strong>Consumicion Gratis en Cayo Largo</strong></div>
+                    <div><h6>Vale para el día de la Fecha</h6></div>
+                    <div>Fecha :  <span t-esc="event['current_date']"/></div>
+                    <div>Nombre del Socio: <span t-esc="event['partner_id']"/></div>
+                    <div>Evento Registardo: <span t-esc="event['event_id']"/></div>
+                    <div>Responsable: <span t-esc="event['user_id']"/></div>
+                </div>
+          </receipt>
+    </t>
+
+</template>

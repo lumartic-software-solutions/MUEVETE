@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<record id="event_registration_inherit" model="ir.ui.view">
+			<field name="name">event.registration.inherit</field>
+			<field name="model">event.registration</field>
+			<field name="inherit_id" ref="event.view_event_registration_form" />
+			<field name="arch" type="xml">
+				<data>
+					<xpath expr="//group[@name='event']" position="after">
+						<group string="Membership Info" invisible="1">
+							<field name="membership_product_id" context="{'partner_id': partner_id}" />
+						</group>
+					</xpath>
+					<xpath expr="//field[@name='event_id']" position="after">
+						<field name="membership_payment_id" string="Membership Payment" />
+					</xpath>
+				</data>
+			</field>
+		</record>
+	</data>
+</odoo>

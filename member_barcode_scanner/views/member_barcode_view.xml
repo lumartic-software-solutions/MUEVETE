@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+        
+    <record id="member_action_kiosk_mode" model="ir.actions.client">
+        <field name="name">Attend Event</field>
+        <field name="tag">member_attendance_kiosk_mode</field>
+        <field name="target">fullscreen</field>
+    </record>
+
+        <menuitem id="menu_member_kiosk_mode"
+            name="Attendee Kiosk Mode"
+            parent="event.event_main_menu"
+            sequence="20" action="member_action_kiosk_mode"/>
+
+
+</odoo>
